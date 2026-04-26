@@ -1,26 +1,64 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #09090b; /* zinc-950 */
+  --foreground: #e4e4e7; /* zinc-200 */
+  
+  --primary: #3b82f6; /* blue-500 */
+  --secondary: #71717a; /* zinc-500 */
+  --tertiary: #a1a1aa; /* zinc-400 */
+  --heading: #f4f4f5; /* zinc-100 */
 }
 
-@theme inline {
+@theme default {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-heading: var(--heading);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-orbitron: var(--font-orbitron);
+  --font-syne: var(--font-syne);
+  --font-jetbrains: var(--font-jetbrains);
+  --font-rajdhani: var(--font-rajdhani);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-jetbrains), monospace;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes trail {
+  0% { transform: scale(1) translate(-50%, -50%); opacity: 0.8; }
+  100% { transform: scale(0) translate(-50%, -50%); opacity: 0; }
+}
+
+.animate-trail {
+  animation: trail 0.8s forwards ease-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080810;
+}
+::-webkit-scrollbar-thumb {
+  background: #7B2FFF;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00D4FF;
 }
