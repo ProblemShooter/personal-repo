@@ -15,7 +15,7 @@ export default function BrainMesh() {
     for (let i = 0; i < count; i++) {
       // Golden spiral distribution on sphere
       const phi = Math.acos(1 - 2 * (i + 0.5) / count);
-      const theta = Math.PI * (1 + Math.sqrt(5)) * i;
+      const theta = Math.PI * (1 + Math.sqrt(5)) * i; 
       
       const r = 2.5 + Math.random() * 0.5; // slight noise
       const x = r * Math.sin(phi) * Math.cos(theta);
@@ -52,6 +52,7 @@ export default function BrainMesh() {
       meshRef.current.instanceMatrix.needsUpdate = true;
     }
   });
+  //will add changes with next version.
 
   return (
     <group ref={groupRef} position={[0, 0, -4]}>
