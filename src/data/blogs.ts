@@ -6,7 +6,6 @@ export const blogCategories = [
   { name: "CAREER", count: 2 },
   { name: "FUTURE TECH", count: 1 },
 ];
-
 export const blogPosts = [
   {
     slug: "rise-of-generative-ai",
